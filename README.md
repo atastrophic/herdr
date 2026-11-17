@@ -47,6 +47,8 @@ curl -fsSL https://herdr.dev/install.sh | sh
 
 or `brew install herdr` · `mise use -g herdr` · windows: `powershell -ExecutionPolicy Bypass -c "irm https://herdr.dev/install.ps1 | iex"` · [endpoint-protected Windows](https://herdr.dev/docs/windows-beta/) · [binaries](https://github.com/herdrdev/herdr/releases)
 
+**windows arm64:** this fork publishes a native ARM64 build of herdr for Windows on ARM (`herdr-windows-aarch64.zip`) on the [releases page](https://github.com/atastrophic/herdr/releases). download, unzip, and put `herdr.exe` on your `PATH`. it uses the system ConPTY. don't rely on `herdr update`: upstream publishes no Windows ARM64 asset, so grab new builds from this fork's releases instead. to build it yourself you need rust 1.96.1, the MSVC ARM64 build tools, and Zig 0.16.0 (an x86_64 Zig works if the native ARM64 one crashes in `zig build`), then `cargo build --release`.
+
 then start it where the work lives:
 
 ```bash
